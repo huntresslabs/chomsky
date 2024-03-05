@@ -4,7 +4,7 @@ module Chomsky
   class Parser
     class Regexp < Parser
       def initialize pattern
-        @pattern = ::Regexp.new("\\A" + pattern.source)
+        @pattern = ::Regexp.new("\\A" + pattern.source, pattern.options)
       end
 
       def call string
